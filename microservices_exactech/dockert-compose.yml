@@ -1,0 +1,66 @@
+version: '3'
+services:
+  ### MySQL database for Activities
+  db-activities:
+    container_name: db-activities
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: db_activities
+      MYSQL_USER: root
+      MYSQL_PASSWORD: upc123321
+      MYSQL_ROOT_PASSWORD: upc123321
+    ports:
+      - 3307:3307
+    expose:
+      - 3307
+  ### Posgres database for Customers
+  db-customers:
+    container_name: db-customers
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: db_customers
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - 5434:5434
+    expose:
+      - 5434
+    command: -p 5434
+
+
+  ### MySQL database for Hired_services
+  db-hired_services:
+    container_name: db-hired_services
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: db_hired_services
+      MYSQL_USER: root
+      MYSQL_PASSWORD: upc123321
+      MYSQL_ROOT_PASSWORD: upc123321
+    ports:
+      - 3308:3308
+    expose:
+      - 3308
+
+  ### MySQL database for Service
+  db-services:
+    container_name: db-services
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: db_services
+      MYSQL_USER: root
+      MYSQL_PASSWORD: upc123321
+      MYSQL_ROOT_PASSWORD: upc123321
+    ports:
+      - 3309:3309
+    expose:
+      - 3309
+
+
+
+
+
