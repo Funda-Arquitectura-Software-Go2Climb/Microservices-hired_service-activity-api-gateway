@@ -17,22 +17,21 @@ public class ActivityController {
         this.activityService = activityService;
     }
 
-@PostMapping
-    public Activity AddActivity(@RequestBody Activity activity)
-{
+    @PostMapping
+    public Activity AddActivity(@RequestBody Activity activity) {
         return activityService.AddActivity(activity);
-}
+    }
     @GetMapping
     public List<Activity> ListALL() {
         return activityService.ListActivity();
     }
 
-@GetMapping("/{id}")
+    @GetMapping("/{id}")
     public Activity GetByIdActivity(@PathVariable Integer id){
-        return activityService.GetActivity(id);
+        return activityService.GetActivityByActivityId(id);
 }
 
-@DeleteMapping("{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable Integer id){
         if(activityService.deleteByIdActivity(id)){
             return ResponseEntity.ok().build();

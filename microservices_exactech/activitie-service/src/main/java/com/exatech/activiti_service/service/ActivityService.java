@@ -15,6 +15,10 @@ public class ActivityService {
         this.activityRepository = activityRepository;
     }
 
+    public Activity GetByName(String name){
+        return activityRepository.findByName(name);
+    }
+
 
 
 public Activity AddActivity (Activity activity){
@@ -28,8 +32,8 @@ public List<Activity> ListActivity(){
 }
 
 
-public Activity GetActivity(Integer id){
-        return activityRepository.findById(id).get();
+public Activity GetActivityByActivityId(Integer activityId){
+        return activityRepository.findActivityByActivityId(activityId);
 }
 
 public  boolean deleteByIdActivity(Integer id){
