@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://dpg-clcmbt3mot1c73dhidn0-a.oregon-postgres.render.com:5432/activity_x7ue?sslmode=require
+    username: activity_x7ue_user
+    password: MS4lPTZfawzNrYqlIw9SWYP5EpjbSfq7
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
